@@ -113,7 +113,7 @@ def icp(source,
     score = REGLIB.icp(source, len(source), target, len(target), transformation,
                        nr_iterations, distance_threshold, epsilon, inlier_threshold, downsample, visualize)
     print(f"ICP converged. Fitness score: {score:.2f}") if score > 0 else print("ICP did not converge!")
-    return transformation
+    return transformation, score
 
 
 def ndt(source,
@@ -159,4 +159,4 @@ def ndt(source,
                   nr_iterations, distance_threshold, epsilon, inlier_threshold, downsample, visualize,
                   resolution, step_size, voxelize)
     print(f"NDT converged. Fitness score: {score:.2f}") if score > 0 else print("NDT did not converge!")
-    return transformation
+    return transformation, score
